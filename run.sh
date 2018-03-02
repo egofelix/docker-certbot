@@ -9,9 +9,9 @@ if [ -z ${renew+x} ]; then
   for domain in "${ADDR[@]}"; do
     certbot certonly --verbose --noninteractive --quiet --standalone --preferred-challenges http-01 --agree-tos --email="${email}" -d "${domain}"
   done
-  
+
 else
 
-  certbot renew
-  
+  certbot renew --verbose --noninteractive --quiet --standalone --preferred-challenges http-01 --agree-tos
+
 fi
